@@ -14,6 +14,11 @@ const userSchema = new mongoose.Schema(
       email: { type: String, required: true },
       phone_number: { type: String, required: true },
     },
+    role: {
+      type: String,
+      default: "user",
+    },
+    joined_groups: [{ type: String, ref: "Group" }],
     id_identification: {
       type: { type: String, required: true },
       number: { type: String, required: true },
